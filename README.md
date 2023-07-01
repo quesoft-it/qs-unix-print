@@ -1,4 +1,6 @@
-# Unix-print
+# QS-Unix-print
+
+FORK OF [artiebits/unix-print](https://github.com/artiebits/unix-print)
 
 A utility for Unix-like operating systems to print files from Node.js and Electron.
 

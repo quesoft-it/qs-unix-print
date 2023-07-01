@@ -1,6 +1,6 @@
 {
-  "name": "unix-print",
-  "version": "1.2.0",
+  "name": "qs-unix-print",
+  "version": "1.2.1",
   "description": "Utility for Unix-like operating systems to print PDF files from Node.js and Electron",
   "license": "MIT",
   "main": "build/index.js",
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/artiebits/unix-print.git"
+    "url": "https://github.com/quesoft-it/unix-print"
   },
   "scripts": {
     "test": "jest",
