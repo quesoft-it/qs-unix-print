@@ -2,6 +2,7 @@
   "name": "qs-unix-print",
   "version": "1.2.1",
   "description": "Utility for Unix-like operating systems to print PDF files from Node.js and Electron",
+  "author": "QueSoft IT <it@quesoft.hu>",
   "license": "MIT",
   "main": "build/index.js",
   "types": "build/index.d.ts",

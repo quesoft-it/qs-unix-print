@@ -20,11 +20,23 @@ function getPrinterName(output: string): string {
 
 async function getPrinterData(printer: string): Promise<Printer> {
   const { stdout } = await execAsync(`lpstat -lp ${printer}`);
-  return {
-    printer,
-    status: stdout.split(/.*is\s(\w+)\..*/gm)[1],
-    description: parsePrinterAttribute(stdout, "Description"),
-    alerts: parsePrinterAttribute(stdout, "Alerts"),
-    connection: parsePrinterAttribute(stdout, "Connection"),
-  };
+  const { stdoutLang } = await execAsync("locale");
+  if (stdoutLang.includes("hu_HU")) {
+    return {
+      printer,
+      status: stdout.split(/.*is\s(\w+)\..*/gm)[1],
+      description: parsePrinterAttribute(stdout, "Leírás"),
+      alerts: parsePrinterAttribute(stdout, "Riasztások"),
+      connection: parsePrinterAttribute(stdout, "Kapcsolat"),
+    };
+  }
+  else {
+    return {
+      printer,
+      status: stdout.split(/.*is\s(\w+)\..*/gm)[1],
+      description: parsePrinterAttribute(stdout, "Description"),
+      alerts: parsePrinterAttribute(stdout, "Alerts"),
+      connection: parsePrinterAttribute(stdout, "Connection"),
+    };
+  }
 }
