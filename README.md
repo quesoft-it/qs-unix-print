@@ -5,6 +5,7 @@ FORK OF [artiebits/unix-print](https://github.com/artiebits/unix-print)
 A utility for Unix-like operating systems to print files from Node.js and Electron.
 
 - Understands different types of files, such as PDF, text, PostScript, and image files.
+- Works with type of Buffer if don't want to save files before.
 - Supports label printers such as Rollo and Zebra.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -25,7 +26,7 @@ A utility for Unix-like operating systems to print files from Node.js and Electr
 
 ## Basic Usage
 
-Print a PDF file to the default printer:
+Print a PDF file or Buffer of PDF file to the default printer:
 
 ```javascript
 import { print } from "unix-print";
@@ -35,16 +36,10 @@ print("assets/file.pdf").then(console.log);
 
 ## Installation
 
-Install using Yarn:
+Install using npm:
 
 ```bash
-yarn add unix-print
-```
-
-Or using npm:
-
-```bash
-npm install --save unix-print
+npm install --save qs-unix-print
 ```
 
 ## API
@@ -57,7 +52,7 @@ A function to print a file to a printer.
 
 | Argument |    Type    | Optional | Description                                                             |
 | -------- | :--------: | -------- | ----------------------------------------------------------------------- |
-| file     |  `string`  | Required | A file to print.                                                        |
+| file     |  `string` or `Buffer`  | Required | A file or Buffer to print.                                                        |
 | printer  |  `string`  | Optional | Print a file to the specific printer.                                   |
 | options  | `string[]` | Optional | Any option from [this list](https://www.computerhope.com/unix/ulp.htm). |
 
