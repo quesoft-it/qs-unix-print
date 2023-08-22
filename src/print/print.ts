@@ -1,4 +1,4 @@
-import fs from "fs/promises";
+import { promises as fs } from "fs";
 import fsBase from "fs";
 import execAsync from "../utils/exec-async";
 
