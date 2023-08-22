@@ -36,7 +36,7 @@ export default async function print(
   }
 
   return execAsync(`lp ${args.join(" ")}`).finally(() => {
-    if (tmpFilePath) fs.rm(tmpFilePath);
+    if (tmpFilePath) fs.unlink(tmpFilePath);
   });
 }
 
